@@ -3,4 +3,4 @@ cmus (2.8.0-1) unstable; urgency=medium
   * Complete redo of cmus package using debhelper.
   * Initial release.
 
- -- Patrick G <patrick@pgaskin.net>  Sun, 10 Feb 2019 11:06:09 -0500
+ -- Patrick Gaskin <patrick@pgaskin.net>  Sun, 10 Feb 2019 11:06:09 -0500
