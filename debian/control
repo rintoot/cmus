@@ -27,6 +27,7 @@ Build-Depends:
  libsamplerate0-dev,
  libvorbis-dev,
  libwavpack-dev,
+ libsystemd-dev,
  pkg-config
 Standards-Version: 4.3.0
 Homepage: https://cmus.github.io/
