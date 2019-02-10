@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+LDFLAGS+=-Wl,--as-needed
+CFLAGS+=-I/usr/include/ncursesw
+
+suggested_deps = pulse roar jack
+
+EXTRA_CMUS_DIR_OP_PLUGINS = debian/cmus/usr/lib/cmus/op/
+EXTRA_CMUS_PLUGINS := $(foreach plugin,$(suggested_deps),$(plugin).so)
+
+%:
+	dh $@ --with bash-completion
+
+override_dh_auto_configure:
+	./configure prefix=/usr CONFIG_ARTS=n DEBUG=0
+
+override_dh_shlibdeps:
+	dh_shlibdeps -pcmus $(foreach plugin,$(EXTRA_CMUS_PLUGINS),-X$(plugin))
+	dpkg-shlibdeps -O -dSuggests $(foreach plugin,$(EXTRA_CMUS_PLUGINS),$(EXTRA_CMUS_DIR_OP_PLUGINS)$(plugin)) >> debian/cmus.substvars
+	dh_shlibdeps --remaining-packages
