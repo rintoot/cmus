@@ -1,6 +1,7 @@
 Description: Fix make clean not removing convert.lo
 Author: Patrick Gaskin <patrick@pgaskin.net>
-Origin: other
+Bug: https://github.com/cmus/cmus/pull/864
+Forwarded: yes
 Last-Update: 2019-02-10
 --- a/Makefile
 +++ b/Makefile
