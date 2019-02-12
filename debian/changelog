@@ -1,3 +1,10 @@
+cmus (2.8.1-1~build867) UNRELEASED; urgency=medium
+
+  * Update upstream to PR #867
+  * Makefile patch not needed anymore (merged upstream)
+
+ -- Patrick Gaskin <patrick@pgaskin.net>  Tue, 12 Feb 2019 15:33:21 -0500
+
 cmus (2.8.0-1) unstable; urgency=medium
 
   * Complete redo of cmus package using debhelper.
